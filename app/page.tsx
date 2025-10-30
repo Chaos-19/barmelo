@@ -405,6 +405,26 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Map Section */}
+        <div className="m-20">
+          <h2 className="text-3xl font-bold mb-8">Find Us On The Map</h2>
+          <div className="relative w-full h-96 rounded-lg overflow-hidden border border-primary/20">
+            <iframe
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d985.1504196335839!2d38.78042215819702!3d9.008749493150997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b8509a6572da3%3A0x97eab4b18ed179e4!2zQmFyIE1lbG8gfCBDaGljaGlueWEgfCDhiaPhiK0g4Yic4YiOIHw!5e0!3m2!1sen!2set!4v1761847224981!5m2!1sen!2set"
+            />
+          </div>
+          <p className="text-sm text-muted-foreground mt-4">
+            Located in the vibrant Bole area of Addis Ababa. Easy access from
+            major roads and close to other entertainment venues.
+          </p>
+        </div>
+
         {/* Social Media Section */}
         <section className="border-t border-border/40">
           <div className="container py-16 md:py-24 text-center">
