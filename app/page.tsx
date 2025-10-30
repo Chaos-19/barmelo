@@ -44,7 +44,7 @@ export default function HomePage() {
                 Bar Melo
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground mb-4">
-                Chichinya | ባር መሎ
+                Night club | ባር መሎ
               </p>
               <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-2xl">
                 Addis Ababa's premier nightlife destination. Experience the
@@ -63,7 +63,9 @@ export default function HomePage() {
                   <MapPin className="h-5 w-5 text-primary" />
                   <div>
                     <p className="font-semibold">Location</p>
-                    <p className="text-muted-foreground">2043+8PW, Bole</p>
+                    <p className="text-muted-foreground">
+                      22, Micky Leland Rd, next to Grand Plaza
+                    </p>
                   </div>
                 </div>
               </div>

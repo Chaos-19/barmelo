@@ -9,11 +9,11 @@ const geist = Geist({ subsets: ["latin"] })
 const geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Bar Melo | Chichinya | ባር መሎ",
+  title: "Bar Melo | Night club | ባር መሎ",
   description:
     "Experience the vibrant nightlife at Bar Melo in Bole, Addis Ababa. Afro Night, Ladies' Night, and unforgettable events.",
   generator: "v0.app",
-}
+};
 
 export default function RootLayout({
   children,

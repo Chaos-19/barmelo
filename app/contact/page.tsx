@@ -1,15 +1,23 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { SiteHeader } from "@/components/site-header"
-import { SiteFooter } from "@/components/site-footer"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { MapPin, Phone, Mail, Clock, Instagram, Facebook, Twitter } from "lucide-react"
-import { useState } from "react"
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  Instagram,
+  Facebook,
+  Twitter,
+} from "lucide-react";
+import { useState } from "react";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -18,26 +26,31 @@ export default function ContactPage() {
     phone: "",
     subject: "",
     message: "",
-  })
+  });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Form submitted:", formData)
+    e.preventDefault();
+    console.log("Form submitted:", formData);
     // Reset form
-    setFormData({ name: "", email: "", phone: "", subject: "", message: "" })
-    alert("Thank you for your message! We'll get back to you soon.")
-  }
+    setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+    alert("Thank you for your message! We'll get back to you soon.");
+  };
 
   const contactInfo = [
     {
       icon: MapPin,
       title: "Location",
-      details: ["Bole Area", "Addis Ababa, Ethiopia"],
+      details: [
+        "22, Micky Leland Rd, next to Grand Plaza",
+        "Addis Ababa, Ethiopia",
+      ],
       link: "https://maps.google.com/?q=Bole+Addis+Ababa",
     },
     {
@@ -58,13 +71,13 @@ export default function ContactPage() {
       details: ["Wednesday - Sunday", "8:00 PM - 4:00 AM"],
       link: null,
     },
-  ]
+  ];
 
   const socialLinks = [
     { icon: Instagram, href: "#", label: "Instagram" },
     { icon: Facebook, href: "#", label: "Facebook" },
     { icon: Twitter, href: "#", label: "Twitter" },
-  ]
+  ];
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -74,9 +87,12 @@ export default function ContactPage() {
         <section className="relative py-20 bg-gradient-to-b from-primary/10 to-background">
           <div className="container max-w-5xl">
             <div className="text-center">
-              <h1 className="text-5xl md:text-6xl font-bold mb-6">Get In Touch</h1>
+              <h1 className="text-5xl md:text-6xl font-bold mb-6">
+                Get In Touch
+              </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Have questions? Want to book a table or plan a special event? We'd love to hear from you.
+                Have questions? Want to book a table or plan a special event?
+                We'd love to hear from you.
               </p>
             </div>
           </div>
@@ -87,9 +103,12 @@ export default function ContactPage() {
           <div className="container max-w-5xl">
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
               {contactInfo.map((info, index) => {
-                const Icon = info.icon
+                const Icon = info.icon;
                 return (
-                  <Card key={index} className="border-primary/20 hover:border-primary/40 transition-colors">
+                  <Card
+                    key={index}
+                    className="border-primary/20 hover:border-primary/40 transition-colors"
+                  >
                     <CardContent className="pt-6">
                       <div className="flex flex-col items-center text-center">
                         <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/20 mb-4">
@@ -98,7 +117,10 @@ export default function ContactPage() {
                         <h3 className="font-semibold mb-3">{info.title}</h3>
                         <div className="space-y-1">
                           {info.details.map((detail, i) => (
-                            <p key={i} className="text-sm text-muted-foreground">
+                            <p
+                              key={i}
+                              className="text-sm text-muted-foreground"
+                            >
                               {detail}
                             </p>
                           ))}
@@ -106,7 +128,7 @@ export default function ContactPage() {
                       </div>
                     </CardContent>
                   </Card>
-                )
+                );
               })}
             </div>
 
@@ -121,12 +143,12 @@ export default function ContactPage() {
                   loading="lazy"
                   allowFullScreen
                   referrerPolicy="no-referrer-when-downgrade"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.6829123456!2d40.7928!3d9.0320!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85cecc!2sBole%2C%20Addis%20Ababa!5e0!3m2!1sen!2set!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d985.1504196335839!2d38.78042215819702!3d9.008749493150997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b8509a6572da3%3A0x97eab4b18ed179e4!2zQmFyIE1lbG8gfCBDaGljaGlueWEgfCDhiaPhiK0g4Yic4YiOIHw!5e0!3m2!1sen!2set!4v1761847224981!5m2!1sen!2set"
                 />
               </div>
               <p className="text-sm text-muted-foreground mt-4">
-                Located in the vibrant Bole area of Addis Ababa. Easy access from major roads and close to other
-                entertainment venues.
+                Located in the vibrant Bole area of Addis Ababa. Easy access
+                from major roads and close to other entertainment venues.
               </p>
             </div>
 
@@ -136,7 +158,9 @@ export default function ContactPage() {
                 <h2 className="text-3xl font-bold mb-8">Send Us A Message</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label className="block text-sm font-medium mb-2">Name</label>
+                    <label className="block text-sm font-medium mb-2">
+                      Name
+                    </label>
                     <Input
                       type="text"
                       name="name"
@@ -149,7 +173,9 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium mb-2">Email</label>
+                    <label className="block text-sm font-medium mb-2">
+                      Email
+                    </label>
                     <Input
                       type="email"
                       name="email"
@@ -162,7 +188,9 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium mb-2">Phone</label>
+                    <label className="block text-sm font-medium mb-2">
+                      Phone
+                    </label>
                     <Input
                       type="tel"
                       name="phone"
@@ -174,7 +202,9 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium mb-2">Subject</label>
+                    <label className="block text-sm font-medium mb-2">
+                      Subject
+                    </label>
                     <Input
                       type="text"
                       name="subject"
@@ -187,7 +217,9 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium mb-2">Message</label>
+                    <label className="block text-sm font-medium mb-2">
+                      Message
+                    </label>
                     <Textarea
                       name="message"
                       value={formData.message}
@@ -212,9 +244,14 @@ export default function ContactPage() {
                     <CardContent className="pt-6">
                       <h3 className="font-semibold mb-3">Reservations</h3>
                       <p className="text-sm text-muted-foreground mb-4">
-                        Want to reserve a table? Call us or use our online booking system to secure your spot.
+                        Want to reserve a table? Call us or use our online
+                        booking system to secure your spot.
                       </p>
-                      <Button asChild variant="outline" className="w-full bg-transparent">
+                      <Button
+                        asChild
+                        variant="outline"
+                        className="w-full bg-transparent"
+                      >
                         <a href="/booking">Book Now</a>
                       </Button>
                     </CardContent>
@@ -224,9 +261,14 @@ export default function ContactPage() {
                     <CardContent className="pt-6">
                       <h3 className="font-semibold mb-3">Special Events</h3>
                       <p className="text-sm text-muted-foreground mb-4">
-                        Planning a private event or corporate gathering? We offer customized packages.
+                        Planning a private event or corporate gathering? We
+                        offer customized packages.
                       </p>
-                      <Button asChild variant="outline" className="w-full bg-transparent">
+                      <Button
+                        asChild
+                        variant="outline"
+                        className="w-full bg-transparent"
+                      >
                         <a href="mailto:bookings@barmelo.com">Inquire Now</a>
                       </Button>
                     </CardContent>
@@ -236,18 +278,25 @@ export default function ContactPage() {
                     <CardContent className="pt-6">
                       <h3 className="font-semibold mb-3">Follow Us</h3>
                       <p className="text-sm text-muted-foreground mb-4">
-                        Stay updated with our latest events and promotions on social media.
+                        Stay updated with our latest events and promotions on
+                        social media.
                       </p>
                       <div className="flex gap-3">
                         {socialLinks.map((social, index) => {
-                          const Icon = social.icon
+                          const Icon = social.icon;
                           return (
-                            <Button key={index} asChild variant="outline" size="icon" className="flex-1 bg-transparent">
+                            <Button
+                              key={index}
+                              asChild
+                              variant="outline"
+                              size="icon"
+                              className="flex-1 bg-transparent"
+                            >
                               <a href={social.href} aria-label={social.label}>
                                 <Icon className="h-4 w-4" />
                               </a>
                             </Button>
-                          )
+                          );
                         })}
                       </div>
                     </CardContent>
@@ -261,30 +310,44 @@ export default function ContactPage() {
         {/* FAQ Preview */}
         <section className="py-20 bg-primary/5">
           <div className="container max-w-5xl">
-            <h2 className="text-3xl font-bold mb-8">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold mb-8">
+              Frequently Asked Questions
+            </h2>
             <div className="grid md:grid-cols-2 gap-6">
               <Card className="border-primary/20">
                 <CardContent className="pt-6">
                   <h3 className="font-semibold mb-2">What's the dress code?</h3>
-                  <p className="text-sm text-muted-foreground">Smart casual. No athletic wear or flip-flops.</p>
+                  <p className="text-sm text-muted-foreground">
+                    Smart casual. No athletic wear or flip-flops.
+                  </p>
                 </CardContent>
               </Card>
               <Card className="border-primary/20">
                 <CardContent className="pt-6">
-                  <h3 className="font-semibold mb-2">What's the minimum age?</h3>
-                  <p className="text-sm text-muted-foreground">18+ with valid ID required for entry.</p>
+                  <h3 className="font-semibold mb-2">
+                    What's the minimum age?
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    21+ with valid ID required for entry.
+                  </p>
                 </CardContent>
               </Card>
               <Card className="border-primary/20">
                 <CardContent className="pt-6">
                   <h3 className="font-semibold mb-2">Do you have parking?</h3>
-                  <p className="text-sm text-muted-foreground">Yes, ample parking available. Call for details.</p>
+                  <p className="text-sm text-muted-foreground">
+                    Yes, ample parking available. Call for details.
+                  </p>
                 </CardContent>
               </Card>
               <Card className="border-primary/20">
                 <CardContent className="pt-6">
-                  <h3 className="font-semibold mb-2">Can we book a private event?</h3>
-                  <p className="text-sm text-muted-foreground">Email us for custom event packages.</p>
+                  <h3 className="font-semibold mb-2">
+                    Can we book a private event?
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    Email us for custom event packages.
+                  </p>
                 </CardContent>
               </Card>
             </div>
@@ -298,5 +361,5 @@ export default function ContactPage() {
       </main>
       <SiteFooter />
     </div>
-  )
+  );
 }
